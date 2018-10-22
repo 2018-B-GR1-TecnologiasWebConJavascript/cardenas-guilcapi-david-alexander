@@ -63,3 +63,14 @@ const respuestaEvery = arregloNumeros
     .every(n => n<5);
 
     console.log(respuestaEvery)
+
+
+
+    console.log(arregloNumeros)
+    const respuestaReduce = arregloNumeros
+    .reduce((valorActualDeLaOperacion, valorActualDelArreglo)=>{
+        return valorActualDeLaOperacion + valorActualDelArreglo
+    },
+        0
+    );
+    console.log(respuestaReduce)
