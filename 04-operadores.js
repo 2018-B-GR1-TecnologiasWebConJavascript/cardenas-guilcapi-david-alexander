@@ -74,3 +74,9 @@ const respuestaEvery = arregloNumeros
         0
     );
     console.log(respuestaReduce)
+
+
+    console.log(arregloNumeros)
+    const respuestaReduce2 = arregloNumeros
+        .reduce((a,b)=>a -b, 100);
+    console.log(respuestaReduce2)
