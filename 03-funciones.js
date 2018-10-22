@@ -48,3 +48,10 @@ function calcularResultadoSumarNNumeros(numeros) {
 }
 
 console.log(sumarNNumeros( 1, 2, 3));
+
+
+
+
+
+
+var arreglo
