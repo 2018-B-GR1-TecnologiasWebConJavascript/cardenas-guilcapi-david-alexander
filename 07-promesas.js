@@ -60,23 +60,59 @@ nuevaPromesa(nombre)
     );
 
 
-function appendFile(nombreArchivo, contenido) {
-    nuevaPromesa('07-ejemplo.txt')
-        .then(contenido => {
-            console.log(contenido);
-            return nuevaPromesaEscritura(
-                '07-ejemplo2.txt',
-                contenido + 'Adios amigos'
+
+const appendFile = (nombreArchivo, contenidoArchivo) => {
+    return new Promise(
+        (resolve, reject) => {
+            fs.readFile(
+                nombreArchivo,
+                'utf-8',
+                (error, contenidoLeidoDelArchivo) => {
+                    if (error) {
+                        fs.writeFile(
+                            nombreArchivo,
+                            contenidoLeidoDelArchivo,
+                            (err) => {
+                                if (err) {
+                                    reject(err);
+                                } else {
+                                    // Devolver el contenido
+                                    resolve(contenidoLeidoDelArchivo)
+                                }
+                            }
+                        );
+                    } else {
+                        fs.writeFile(
+                            nombreArchivo,
+                            contenidoLeidoDelArchivo,
+                            (err) => {
+                                if (err) {
+                                    reject(err);
+                                } else {
+                                    // Devolver el contenido
+                                    resolve(contenidoLeidoDelArchivo + 'nuevo contenido')
+                                }
+                            }
+                        )
+                    }
+                }
             );
-        })
-        .then(contenidoArchivoEscrito => {
-            console.log(contenidoArchivoEscrito);
-        })
-        .catch(error => {
-            console.log('Catch', error);
-        });
+        }
+    )
+
 }
 
-appendFile('06-texto.txt', '\nHola amigos');
 
+appendFile('08-texto.txt', 'nuevoContenido' )
+    .then(
+        (contenido) => {
+            console.log(contenido);
+            return nuevaPromesaEscritura('07-ejemplo2.txt', contenido + 'Adios amigos');
+        }
+    )
+    .catch(
+        (error) => {
+            console.log('Catch',error);
+        }
+    );
 
