@@ -116,3 +116,49 @@ appendFile('08-texto.txt', 'nuevoContenido' )
         }
     );
 
+
+
+const ejercicio = (arreglo) =>{
+    const arregloRespuestas = [];
+    return new Promise ((resolve, reject )=>{
+        arreglo.forEach(
+            (string, indice)=>{
+                const nombreArchivo = `${indice}-${string}.txt`;
+                const contenidoArchivo = string;
+                fs.writeFile(nombreArchivo, contenidoArchivo, (err)=>{
+
+                    if(err){
+                        reject(err)
+                    }
+                    else{
+                        const respuesta = {
+                            nombreArchivo:nombreArchivo,
+                            contenidoArchivo:contenidoArchivo,
+                            error:err
+
+                        };
+                        arregloRespuestas.push(respuesta);
+                        resolve(arregloRespuestas)
+                    }
+
+                })
+            });
+
+    })
+
+}
+
+
+
+ejercicio( ['h','i','j','k'])
+    .then(
+        (arregloRespuestas) => {
+            console.log(arregloRespuestas);
+            return ejercicio(['h','i','j','k']);
+        }
+    )
+    .catch(
+        (error) => {
+            console.log('Catch',error);
+        }
+    );
