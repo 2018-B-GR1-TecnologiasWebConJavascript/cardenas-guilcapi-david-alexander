@@ -53,3 +53,29 @@ appendFile(
             console.log(contenido);
         }
     });
+function ejercicio(arregloStrings,
+                   callback){
+    const arregloRespuestas = [];
+    arregloStrings.forEach(
+        (string, indice) =>{
+            const nombreArchivo = `${indice}-${string}.txt`;
+            const contenidoArchivo = string;
+            fs.writeFile(nombreArchivo, contenidoArchivo, (err)=>{
+                const respuesta = {
+                    nombreArchivo:nombreArchivo,
+                    contenidoArchivo:contenidoArchivo,
+                    error:err
+
+                };
+                arregloRespuestas.push(respuesta);
+                const terminoElArreglo = arregloStrings.length == arregloRespuestas.length;
+                if(terminoElArreglo){
+                    callback(arregloRespuestas);
+                }
+            })
+
+        })
+}
+ejercicio(['a','b','c'], (arregloRespuestas) =>{
+    console.log(arregloRespuestas)
+})
