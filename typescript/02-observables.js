@@ -1,4 +1,4 @@
-/ 02-observables.ts
+// 02-observables.ts
 const rxjs = require('rxjs');
 const map = require('rxjs/operators').map;
 const distinct = require('rxjs/operators').distinct;
@@ -14,7 +14,10 @@ const promesita = (correcto) => {
         }
     });
 };
-const promesita$ = rxjs.from(promesita(true));
+const promesita$ = rxjs.from(promesita(true)
+    .subscribe((ok) =>{
+        console.log('oka vale papu')
+    }));
 const promesitaNoOk$ = rxjs.from(promesita(true));
 console.log(numeros$);
 numeros$

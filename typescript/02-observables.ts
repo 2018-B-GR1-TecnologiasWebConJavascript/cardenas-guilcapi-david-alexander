@@ -34,7 +34,10 @@ const promesita = (correcto) => {
 };
 
 
-const promesita$ = rxjs.from(promesita(true));
+const promesita$ = rxjs.from(promesita(true)
+    .subscribe((ok) =>{
+        console.log('oka vale papu')
+    }));
 const promesitaNoOk$ = rxjs.from(promesita(true));
 
 console.log(numeros$);
