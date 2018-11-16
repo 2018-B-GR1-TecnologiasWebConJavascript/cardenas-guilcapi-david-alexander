@@ -4,6 +4,7 @@ const { Observable } = require('rxjs');
 const fs   = require('fs');
 const path = require('path');
 
+
 const observe = Observable.create(function(obs) {
     obs.next({
         type: 'list',
@@ -199,7 +200,7 @@ const promesaEliminar = (nombreArchivo) =>{
                 nombreArchivo,
                 (error)=>{
                     if(error){
-                        reject(error)
+                        reject(error);
                         console.log("el archivo no existe no se puede eliminar")
                     }
                     else {
