@@ -1,5 +1,5 @@
 /**
- * Raza.js
+ * Mascota.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,9 +13,8 @@ module.exports = {
       type: 'string',
       required: true
     },
-    mascotas: {
-      collection: 'Mascota', // Modelo Hijo
-      via: 'idRaza' // Nombre del Campo
+    idRaza: {
+      model: 'Raza' // Modelo Papa
     }
 
   },

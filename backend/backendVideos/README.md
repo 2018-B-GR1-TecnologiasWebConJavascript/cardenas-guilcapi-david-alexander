@@ -1,4 +1,4 @@
-# backend-videos
+# video-backend
 
 a [Sails v1](https://sailsjs.com) application
 
@@ -14,9 +14,9 @@ a [Sails v1](https://sailsjs.com) application
 
 ### Version info
 
-This app was originally generated on Mon Dec 17 2018 16:39:35 GMT-0500 (GMT-05:00) using Sails v1.1.0.
+This app was originally generated on Fri Dec 14 2018 17:48:52 GMT-0500 (-05) using Sails v1.1.0.
 
-<!-- Internally, Sails used [`sails-generate@1.16.3`](https://github.com/balderdashy/sails-generate/tree/v1.16.3/lib/core-generators/new). -->
+<!-- Internally, Sails used [`sails-generate@1.16.2`](https://github.com/balderdashy/sails-generate/tree/v1.16.2/lib/core-generators/new). -->
 
 
 
