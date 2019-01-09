@@ -1,0 +1,48 @@
+<h3>Gestion Usuarios</h3>
+<p>Gestione sus usuarios.</p>
+
+<table>
+  <!-- tr -> table row  -->
+  <tr>
+    <!-- th -> table header  -->
+    <th> Identificador</th>
+    <th> Nombre</th>
+    <th> Accion</th>
+  </tr>
+  <!-- tr -> table row  -->
+  <tr *ngFor="let usuario of usuarios">
+    <td> {{usuario.id}}</td>
+    <td> {{usuario.nombre}}</td>
+    <td>
+      <!-- Event Binding (nombreEvento)="funcionEnLaClase()"  -->
+      <button (click)="eliminar(usuario)">
+        Eliminar
+      </button>
+      <!-- Property Binding [propiedad] Js    -->
+      <a [routerLink]="
+      ['/menun','ver-usuario',usuario.id]">
+            <!--
+            /menu/ver-usuario/usuario.id
+            url -> arreglo
+            ['/menu','ver-usuario',usuario.id]
+             -->
+          <button>
+            Ver
+          </button>
+      </a>
+
+    </td>
+  </tr>
+
+</table>
+
+<!-- INTERPOLACION -> {{nombrePropiedad}} o {{nombreFuncion}}  -->
+
+<!-- DIRECTIVAS -->
+<!-- *ngFor -> ITERA UN ARREGLO -->
+
+
+
+
+
+

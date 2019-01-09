@@ -1,0 +1,39 @@
+
+<!-- header 1-6 Titulos  -->
+<h1>Componente Principal</h1>
+<!-- ul -> unordered list-->
+<!-- ol -> ordered list-->
+<ul>
+  <!-- li -> list item -->
+  <li>
+    <!-- a -> anchor -> ancla -->
+    <a routerLink="/inicio">Inicio</a>
+  </li>
+
+  <li>
+    <a routerLink="/menu">Menu</a>
+    <!-- EMPIEZA-->
+    <ol>
+      <li>
+        <a routerLink="/menu/gestion-usuarios"> Gestion Usuarios </a>
+      </li>
+      <li>
+        <a routerLink="/menu/gestion-productos"> Gestion Productos </a>
+      </li>
+    </ol>
+    <!-- Terminando-->
+  </li>
+
+  <li>
+    <a routerLink="/perfil">Perfil</a>
+  </li>
+  <li>
+    <a routerLink="/login">Login</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+<!-- p -> parrafo  -->
+<p>Footer</p>
+
+
