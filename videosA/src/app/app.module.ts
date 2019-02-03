@@ -25,6 +25,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {CardModule, ChartModule, InputTextModule, MessageModule, MessagesModule} from 'primeng/primeng';
+import {EsAdministrador} from './servicios/guards/es-administrador';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import {CardModule, ChartModule, InputTextModule, MessageModule, MessagesModule}
   providers: [
     UsuarioServiceService,
     RazaRestService,
-    AuthService
+    AuthService,
+    EsAdministrador
   ], // Servicios
   bootstrap: [AppComponent] // Componente Principal
 })

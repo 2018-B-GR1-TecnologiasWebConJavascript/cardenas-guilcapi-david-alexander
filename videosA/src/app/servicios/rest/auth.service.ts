@@ -18,6 +18,14 @@ export class AuthService {
     username: 'adrian'
   };
 
+  roles = [
+
+    {
+      id: 2,
+      nombre: 'Usuario'
+    }
+  ];
+
   constructor(private readonly _httpClient: HttpClient) {
 
   }
@@ -34,5 +42,13 @@ export class AuthService {
       })
       .pipe(map(r => <Raza>r)); // Casteo
 
+  }
+
+  esAdministrador(): boolean {
+    return this.roles.some((rol) => rol.id === 1);
+  }
+
+  esUsuario(): boolean {
+    return this.roles.some((rol) => rol.id === 2);
   }
 }
