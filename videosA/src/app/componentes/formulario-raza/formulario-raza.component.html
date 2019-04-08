@@ -1,0 +1,54 @@
+<form #formularioActualizarRaza="ngForm"
+      novalidate
+      (submit)="emitirFormularioValido(formularioActualizarRaza)"
+>
+  <div>
+    <p *ngIf="inputNombre.errors">
+
+      <p-message
+        *ngIf="inputNombre.errors.required"
+        severity="warn"
+        text="Error: El nombre es requerido"></p-message>
+
+    </p>
+    <label [hidden]="true"
+           for="nombre">Nombre Raza</label>
+
+    <div class="ui-inputgroup">
+      <input id="nombre"
+
+             pInputText
+             placeholder="Nombre Raza"
+
+
+             required
+             type="text"
+             name="nombre"
+             [(ngModel)]="nombreRaza"
+             #inputNombre="ngModel"
+      >
+    </div>
+
+  </div>
+
+  <div>
+    <label for="username">Usuario</label>
+    <input id="username"
+           name="username"
+           type="text"
+           [(ngModel)]="username"
+    >
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input id="password"
+           name="password"
+           type="password"
+           [(ngModel)]="password"
+    >
+  </div>
+
+  <button [disabled]="formularioActualizarRaza.invalid">
+    {{nombreBoton}}
+  </button>
+</form>

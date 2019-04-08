@@ -8,6 +8,9 @@ import {Ruta404Component} from './rutas/ruta404/ruta404.component';
 import {RutaGestionUsuariosComponent} from './rutas/ruta-gestion-usuarios/ruta-gestion-usuarios.component';
 import {RutaGestionProductosComponent} from './rutas/ruta-gestion-productos/ruta-gestion-productos.component';
 import {RutaVerDetalleUsuarioComponent} from './rutas/ruta-ver-detalle-usuario/ruta-ver-detalle-usuario.component';
+import {RutaCrearRazaComponent} from './rutas/ruta-crear-raza/ruta-crear-raza.component';
+import {RutaActualizarRazaComponent} from './rutas/ruta-actualizar-raza/ruta-actualizar-raza.component';
+import {EsAdministrador} from './servicios/guards/es-administrador';
 
 const routes: Routes = [
   {
@@ -34,6 +37,20 @@ const routes: Routes = [
         // menu/gestion-usuarios
         path: 'gestion-usuarios',
         component: RutaGestionUsuariosComponent,
+        canActivate:[
+          // GUARDS -> Servicio
+          EsAdministrador
+        ]
+      },
+      {
+        // menu/crear-raza
+        path: 'crear-raza',
+        component: RutaCrearRazaComponent,
+      },
+      {
+        // menu/crear-raza
+        path: 'actualizar-raza/:idRaza',
+        component: RutaActualizarRazaComponent,
       },
       {
         // menu/gestion-productos

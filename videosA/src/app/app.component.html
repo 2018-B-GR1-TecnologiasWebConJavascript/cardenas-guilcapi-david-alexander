@@ -14,10 +14,10 @@
     <a routerLink="/menu">Menu</a>
     <!-- EMPIEZA-->
     <ol>
-      <li>
+      <li *ngIf="_authService.esAdministrador()">
         <a routerLink="/menu/gestion-usuarios"> Gestion Usuarios </a>
       </li>
-      <li>
+      <li *ngIf="_authService.esUsuario()">
         <a routerLink="/menu/gestion-productos"> Gestion Productos </a>
       </li>
     </ol>

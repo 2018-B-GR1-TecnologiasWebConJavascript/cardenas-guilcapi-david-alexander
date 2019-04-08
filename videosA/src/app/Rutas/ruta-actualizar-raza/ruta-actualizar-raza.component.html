@@ -1,0 +1,15 @@
+<h1>Actualizar raza</h1>
+
+<div *ngIf="razaAActualizar">
+
+
+  <app-formulario-raza
+    [nombre]="razaAActualizar.nombre"
+    [nombreBoton]="'Actualizar'"
+    (formularioValido)="actualizarRaza($event)"
+  >
+  </app-formulario-raza>
+
+
+</div>
+

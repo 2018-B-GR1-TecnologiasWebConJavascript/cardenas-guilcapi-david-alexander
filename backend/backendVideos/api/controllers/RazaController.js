@@ -20,6 +20,9 @@ module.exports = {
     // Body Query
     const parametros = req.allParams();
 
+
+    // Buscar el usuario con username y password
+    // como el que te mando
     var nombreCac = await Raza.find({
       nombre: {'startsWith': parametros.nombre}
     });
@@ -27,6 +30,26 @@ module.exports = {
     return res.ok(nombreCac);
 
   },
+
+  // http://localhost:1337/raza/login
+  // POST
+  login: async (req, res) => {
+    const parametros = req.allParams();
+
+    var usuarioLogeado = await Raza.find({
+      username: parametros.username,
+      password: parametros.password,
+    });
+
+    const error = usuarioLogeado.length === 0;
+
+    if (!error) {
+      return res.ok(usuarioLogeado[0]);
+    } else {
+      return res.badRequest({mensaje: 'Usuario Invalido'});
+    }
+
+  }
 
 };
 

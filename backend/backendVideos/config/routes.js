@@ -25,6 +25,22 @@ module.exports.routes = {
 
   'POST /Raza/buscarPorNombre': 'RazaController.buscarPorNombre',
 
+  'POST /Raza/login': 'RazaController.login',
+
+  'GET /Raspberry/saludo': 'RaspberryController.saludo',
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /***************************************************************************
   *                                                                          *
